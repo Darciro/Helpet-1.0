@@ -1,0 +1,11 @@
+.sidenav-toolbar {
+
+}
+
+.sidenav-links a {
+  color: #737373;
+}
+
+.sidenav-links a .material-icons{
+  margin-right: 15px;
+}
