@@ -1,9 +1,15 @@
-.sidenav-toolbar {
-
+.sidenav-links {
+  margin-top: 64px;
+  padding-top: 40px;
 }
 
 .sidenav-links a {
   color: #737373;
+}
+
+.sidenav-links a.current {
+  font-weight: bold;
+  background: rgba(0,0,0,.04);
 }
 
 .sidenav-links a .material-icons{

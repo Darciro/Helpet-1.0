@@ -1,0 +1,39 @@
+<mat-card class="pet-card mt-20" *ngFor="let pet of pets">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"
+         style="background-image: url(https://avatars2.githubusercontent.com/u/7662029?s=460&v=4);background-size: cover;"></div>
+    <mat-card-title>{{ pet.pet_owner }}</mat-card-title>
+    <mat-card-subtitle>30 de Agosto de 2019</mat-card-subtitle>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="pet-menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+  </mat-card-header>
+  <img mat-card-image src="{{ pet.thumbnail }}"
+       alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <h3 class="pet-name">{{ pet.name }}</h3>
+    <h4 class="pet-breed">{{ pet.type }} da raça: {{ pet.breed }}, Porte: {{ pet.size }} <span [className]="pet.state === 'Encontrado' ? 'pet-status found' : 'pet-status missing'">{{ pet.state }}</span></h4>
+    <p>{{ pet.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a href="#{{ pet.id }}" mat-button color="accent">Mais informações</a>
+    <div class="subactions">
+      <a href="#" mat-button color="accent"><i class="material-icons">favorite</i></a>
+      <a href="#" mat-button color="accent"><i class="material-icons">share</i></a>
+    </div>
+  </mat-card-actions>
+</mat-card>
